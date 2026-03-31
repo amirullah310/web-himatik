@@ -1,0 +1,1 @@
+import{j as e}from"./app-BGX86Ga_.js";function r({user:t}){return e.jsx("div",{className:"min-h-screen flex items-center justify-center",children:e.jsxs("div",{className:"text-center",children:[e.jsxs("h1",{className:"text-4xl font-bold text-purple-600",children:["@",t.username]}),e.jsx("p",{className:"text-gray-600 mt-2",children:t.name})]})})}export{r as default};

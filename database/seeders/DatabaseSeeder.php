@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+        // User::factory(10)->create();
+
+        $this->call(PermissionSeeder::class);
+        $this->call(AdminRoleSeeder::class);
+
+        if (!User::where('email', 'admin@gmail.com')->first()) {
+            User::factory()->create([
+                'name' => 'Administrator',
+                'email' => 'superadmintik@gmail.com',
+                'password' => bcrypt('admintik24'), // Use a secure password
+                'role_id' => 1,
+            ]);
+        }
+    }
+}
